@@ -1,13 +1,138 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+    padding: 0 1rem;
+}
+
+.content {
+    min-height: calc(100vh - 70px - 64px);
+    padding: 1.5rem 0;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card .card-content {
+    flex-grow: 1;
+}
+
+.card-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+    cursor: pointer;
+    z-index: 5;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.cart-quantity {
+    padding-left: 10px;
+}
+
+@media (min-width: 767px) {
+    .cart {
+        top: 5rem;
+        bottom: unset;
+    }
+}
+
+.cart-wrap {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+}
+
+.cart-list {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #ffffff;
+    width: 50rem;
+    max-width: 95%;
+
+    animation: show 0.5s ease-in-out;
+}
+
+.cart-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.cart-delete {
+    cursor: pointer;
+}
+
+@keyframes show {
+    from {
+        top: 70%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+.cart-icon {
+    vertical-align: middle;
+    cursor: pointer;
+    color: #26a69a;
+}
+
+#toast-container {
+    top: 3rem !important;
+    animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+
 }
