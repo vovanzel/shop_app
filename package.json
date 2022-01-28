@@ -1,6 +1,6 @@
 {
   "name": "shop_app",
-  "home": "https://vovanzel.github.io/shop_app",
+  "homepage": "https://vovanzel.github.io/shop_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
